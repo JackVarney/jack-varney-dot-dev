@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Jack Varney JavaScript Developer`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Jack Varney | JavaScript Developer`,
+    description: `What more is there to describe, its my personal site?`,
     author: `Jack Varney`,
   },
   plugins: [
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.ico`,
       },
     },
     `gatsby-plugin-styled-components`,
