@@ -82,7 +82,7 @@ const create360GradientAnimation = () => {
         repeating-radial-gradient(
           1.5rem 1rem,
           hsl(360, 50%, 50%) 0%,
-          hsl(360, 50%, 75%) 50%
+          hsl(360, 50%, 55%) 50%
         );
     }
   }
@@ -123,14 +123,8 @@ const DancingBackground = styled.div`
     0% {
       font-size: 10000px;
     }
-    25% {
-      font-size: 8000px;
-    }
     50% {
-      font-size: 9000px;
-    }
-    75% {
-      font-size: 8000px;
+      font-size: 7500px;
     }
     100% {
       font-size: 10000px;
