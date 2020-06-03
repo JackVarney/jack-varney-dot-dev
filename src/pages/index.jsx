@@ -92,6 +92,7 @@ const create360GradientAnimation = () => {
 }
 
 const DancingWrapper = styled.div`
+  transform: rotate(180deg);
   position: absolute;
   z-index: -1;
   top: 0;
