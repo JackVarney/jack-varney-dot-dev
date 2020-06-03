@@ -45,7 +45,7 @@ const Title = styled.h1`
 const SubTitle = styled.span`
   display: block;
 
-  margin: 24px 0 0 0;
+  margin: 32px 0 0 0;
 
   font-family: ${monospace};
   font-size: 1rem;
