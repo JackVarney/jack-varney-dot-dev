@@ -1,20 +1,35 @@
 import React from 'react'
-import './layout.css'
 import styled from 'styled-components'
+import './index.css'
+
+const monospace = `'Lucida Console', Monaco, monospace`
 
 const Main = styled.main`
-  min-height: 100vh;
+  height: 100%;
+`
+
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: '24px';
+  padding: 0 0 16px;
+
+  font-size: 1rem;
+  font-weight: 900;
+  font-family: ${monospace};
+  text-transform: uppercase;
+
+  background-color: black;
+  color: white;
 `
 
 const Layout = ({ children }) => {
   return (
     <>
       <Main>{children}</Main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer>© {new Date().getFullYear()}, me</Footer>
     </>
   )
 }
