@@ -74,7 +74,7 @@ const DancingBackground = styled.div`
   height: 100%;
   width: 100%;
 
-  font-size: 100px;
+  font-size: 5000px;
   background-color: black;
   ${create360GradientAnimation()}
 
