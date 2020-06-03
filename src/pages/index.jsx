@@ -61,31 +61,25 @@ const StyledAbbriviation = styled.abbr`
 `
 
 const create360GradientAnimation = () => {
+  const getBackgroundGradient = num => `
+    ${num / 3.6}% {
+      background: 1rem 100rem / 1em 1em
+        repeating-radial-gradient(
+          1.5rem 1rem,
+          hsl(${num + 180}, 50%, 50%) 0%,
+          hsl(${num + 180}, 50%, 55%) 50%
+        );
+    }
+  `
+
   let css = `
-  @keyframes DancingGradientColors {
+@keyframes DancingGradientColors {
   `
   for (let i = 0; i < 360; i += 1) {
-    css += `
-    ${i / 3.6}% {
-      background: 1rem 100rem / 1em 1em
-        repeating-radial-gradient(
-          1.5rem 1rem,
-          hsl(${i}, 50%, 50%) 0%,
-          hsl(${i}, 50%, 55%) 50%
-        );
-    }
-    `
+    css += getBackgroundGradient(i)
   }
-  css += `
-    100% {
-      background: 1rem 100rem / 1em 1em
-        repeating-radial-gradient(
-          1.5rem 1rem,
-          hsl(360, 50%, 50%) 0%,
-          hsl(360, 50%, 55%) 50%
-        );
-    }
-  }
+  css += `    
+}
   `
 
   return css
