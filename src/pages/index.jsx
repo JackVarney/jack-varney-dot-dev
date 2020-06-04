@@ -16,33 +16,22 @@ const Header = styled.header`
   width: 100%;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   color: hsl(0, 100%, 0%);
 `
 
 const Content = styled.div`
-  padding: 64px 32px;
-
+  text-align: center;
   text-transform: lowercase;
-
   background-color: white;
-
-  @media (min-width: 426px) {
-    padding: 64px 32px;
-  }
-
-  @media (min-width: 768px) {
-    padding: 64px 96px;
-  }
 `
 
 const Title = styled.h1`
-  margin: 0;
+  margin: 0 2rem;
 
   font-family: ${monospace};
-  text-align: center;
   font-size: 2rem;
 
   @media (min-width: 426px) {
@@ -52,14 +41,13 @@ const Title = styled.h1`
 const SubTitle = styled.span`
   display: block;
 
-  margin: 32px 0 0 0;
-
   font-family: ${monospace};
   font-size: 1rem;
   line-height: 24px;
 
   @media (min-width: 768px) {
     line-height: 0px;
+    margin: 1rem 0 0 0;
   }
 `
 
@@ -67,22 +55,27 @@ const StyledAbbriviation = styled.abbr`
   color: hsl(180, 100%, 5%);
 `
 
-const DancingWrapper = styled.div`
-  transform: rotate(180deg);
+const CanvasWrapper = styled.div`
   position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  height: ${props => props.height || '12px'};
+  width: ${props => props.width || '12px'};
+  top: ${props => props.top};
+  ${props => (props.left ? `left: ${props.left}` : '')};
+  ${props => (props.right ? `right: ${props.right}` : '')};
+`
 
-  height: 100%;
-  width: 100%;
-
-  @media (min-height: 768px) {
-    height: calc(100% - 256px);
-    width: calc(100% - 256px);
-    padding: 128px;
+const DontShowOnMobile = styled.div`
+  display: none;
+  @media (min-width: 426px) {
+    display: block;
   }
 `
+
+const Square = props => (
+  <CanvasWrapper {...props}>
+    <DancingCanvas base={props.base} />
+  </CanvasWrapper>
+)
 
 const IndexPage = () => {
   const JS = () => (
@@ -115,9 +108,64 @@ const IndexPage = () => {
 
       <HeaderSection>
         <Header>
-          <DancingWrapper>
-            <DancingCanvas />
-          </DancingWrapper>
+          <Square top="2rem" right="2rem" width="1rem" height="20%" base={0} />
+          <Square
+            top="70%"
+            right="2rem"
+            width="1rem"
+            height="calc(30% - 2rem)"
+            base={0}
+          />
+
+          <DontShowOnMobile>
+            <Square
+              top="2rem"
+              right="6rem"
+              width="0.4rem"
+              height="50%"
+              base={10}
+            />
+            <Square
+              top="2rem"
+              right="6.5rem"
+              width="0.4rem"
+              height="50%"
+              base={20}
+            />
+            <Square
+              top="2rem"
+              right="7rem"
+              width="0.4rem"
+              height="50%"
+              base={30}
+            />
+            <Square
+              top="2rem"
+              right="7.5rem"
+              width="0.4rem"
+              height="50%"
+              base={40}
+            />
+            <Square
+              top="2rem"
+              right="8rem"
+              width="0.4rem"
+              height="50%"
+              base={40}
+            />
+          </DontShowOnMobile>
+
+          <Square top="10%" left="40%" base={10} />
+
+          <Square top="30%" left="20%" base={40} />
+          <Square top="30%" left="calc(20% + 12px)" base={160} />
+
+          <Square top="30%" left="70%" base={160} />
+          <Square top="80%" left="70%" base={50} />
+
+          <Square top="35%" left="40%" base={280} />
+          <Square top="60%" left="40%" base={220} />
+
           <Content>
             <Title>
               Jack Varney
