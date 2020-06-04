@@ -6,6 +6,11 @@ import DancingCanvas from '../components/DancingCanvas'
 
 const monospace = `'Lucida Console', Monaco, monospace`
 
+const HeaderSection = styled.section`
+  height: 100%;
+  width: 100%;
+`
+
 const Header = styled.header`
   height: 100%;
   width: 100%;
@@ -18,7 +23,7 @@ const Header = styled.header`
 `
 
 const Content = styled.div`
-  padding: 16px 32px;
+  padding: 64px 32px;
 
   text-transform: lowercase;
 
@@ -69,14 +74,14 @@ const DancingWrapper = styled.div`
   top: 0;
   left: 0;
 
-  height: calc(100% - 100px);
-  width: calc(100% - 100px);
-  padding: 50px;
+  height: calc(100% - 32px);
+  width: calc(100% - 32px);
+  padding: 16px;
 
   @media (min-height: 768px) {
-    height: calc(100% - 200px);
-    width: calc(100% - 200px);
-    padding: 100px;
+    height: calc(100% - 256px);
+    width: calc(100% - 256px);
+    padding: 128px;
   }
 `
 
@@ -109,25 +114,27 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Jack Varney | JavaScript Developer" />
 
-      <Header>
-        <DancingWrapper>
-          <DancingCanvas />
-        </DancingWrapper>
-        <Content>
-          <Title>
-            Jack Varney
-            <SubTitle>
-              <HTML />
-              {' / '}
+      <HeaderSection>
+        <Header>
+          <DancingWrapper>
+            <DancingCanvas />
+          </DancingWrapper>
+          <Content>
+            <Title>
+              Jack Varney
+              <SubTitle>
+                <HTML />
+                {' / '}
 
-              <JS />
-              {' / '}
+                <JS />
+                {' / '}
 
-              <CSS />
-            </SubTitle>
-          </Title>
-        </Content>
-      </Header>
+                <CSS />
+              </SubTitle>
+            </Title>
+          </Content>
+        </Header>
+      </HeaderSection>
     </Layout>
   )
 }
