@@ -83,7 +83,7 @@ const DancingWrapper = styled.div`
 const IndexPage = () => {
   const JS = () => (
     <>
-      <StyledAbbriviation title="JavsScript">JS</StyledAbbriviation> fanatic
+      <StyledAbbriviation title="JavaScript">JS</StyledAbbriviation> fanatic
     </>
   )
 
