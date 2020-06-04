@@ -64,7 +64,7 @@ const SubTitle = styled.span`
 `
 
 const StyledAbbriviation = styled.abbr`
-  color: hsl(220, 100%, 50%);
+  color: hsl(180, 100%, 5%);
 `
 
 const DancingWrapper = styled.div`
