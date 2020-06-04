@@ -1,5 +1,7 @@
 import React, { useRef, useLayoutEffect } from 'react'
 
+const getHSL = num => `hsl(${num}, 100%, 80%)`
+
 function DancingCanvas() {
   const canvasRef = useRef(null)
   useLayoutEffect(() => {
@@ -9,7 +11,6 @@ function DancingCanvas() {
     const WIDTH = canvas.width
     const HEIGHT = canvas.height
     const ctx = canvas.getContext('2d')
-    const getHSL = num => `hsl(${num}, 100%, 80%)`
 
     let i = 0
     function draw() {
@@ -33,12 +34,24 @@ function DancingCanvas() {
     draw()
   })
 
+  const fallbackGradient = `linear-gradient(
+      110deg, 
+      ${getHSL(30)},
+      ${getHSL(60)},
+      ${getHSL(90)},
+      ${getHSL(120)},
+      ${getHSL(150)},
+      ${getHSL(180)}
+  )`
+
   return (
     <canvas
       style={{
         height: '100%',
         width: '100%',
         zIndex: '0',
+        backgroundColor: getHSL(180),
+        background: fallbackGradient,
       }}
       ref={canvasRef}
     />
