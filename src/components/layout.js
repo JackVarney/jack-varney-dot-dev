@@ -14,7 +14,7 @@ const Footer = styled.footer`
   align-items: center;
 
   height: '24px';
-  padding: 0 0 16px;
+  padding: 8px 0;
 
   font-size: 1rem;
   font-weight: 900;
