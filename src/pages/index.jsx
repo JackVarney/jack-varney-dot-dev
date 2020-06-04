@@ -74,9 +74,8 @@ const DancingWrapper = styled.div`
   top: 0;
   left: 0;
 
-  height: calc(100% - 32px);
-  width: calc(100% - 32px);
-  padding: 16px;
+  height: 100%;
+  width: 100%;
 
   @media (min-height: 768px) {
     height: calc(100% - 256px);
