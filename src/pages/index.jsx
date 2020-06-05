@@ -64,13 +64,6 @@ const CanvasWrapper = styled.div`
   ${props => (props.right ? `right: ${props.right}` : '')};
 `
 
-const DontShowOnMobile = styled.div`
-  display: none;
-  @media (min-width: 426px) {
-    display: block;
-  }
-`
-
 const Square = props => (
   <CanvasWrapper {...props}>
     <DancingCanvas base={props.base} />
@@ -108,53 +101,6 @@ const IndexPage = () => {
 
       <HeaderSection>
         <Header>
-          <Square top="2rem" right="2rem" width="1rem" height="20%" base={0} />
-          <Square
-            top="70%"
-            right="2rem"
-            width="1rem"
-            height="calc(30% - 2rem)"
-            base={0}
-          />
-
-          <DontShowOnMobile>
-            <Square
-              top="2rem"
-              right="6rem"
-              width="0.4rem"
-              height="50%"
-              base={10}
-            />
-            <Square
-              top="2rem"
-              right="6.5rem"
-              width="0.4rem"
-              height="50%"
-              base={20}
-            />
-            <Square
-              top="2rem"
-              right="7rem"
-              width="0.4rem"
-              height="50%"
-              base={30}
-            />
-            <Square
-              top="2rem"
-              right="7.5rem"
-              width="0.4rem"
-              height="50%"
-              base={40}
-            />
-            <Square
-              top="2rem"
-              right="8rem"
-              width="0.4rem"
-              height="50%"
-              base={40}
-            />
-          </DontShowOnMobile>
-
           <Square top="10%" left="40%" base={10} />
 
           <Square top="30%" left="20%" base={40} />
